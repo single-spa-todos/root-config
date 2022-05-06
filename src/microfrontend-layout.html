@@ -1,0 +1,43 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+  <style>
+    body, html { margin: 0; padding: 0; font-size: 16px; font-family: Arial, Helvetica, sans-serif; height: 100%; }
+    body { display: flex; flex-direction: column; }
+    * { box-sizing: border-box; }
+  </style>
+
+  <main>
+    <nav>
+      <application name="@single-spa-todos/nav"></application>
+    </nav>
+    <route path="/" exact>
+      <h1>Homepage</h1>
+    </route>
+    <route path="/todos">
+      <application name="@single-spa-todos/todos"></application>
+    </route>
+    <route path="/users">
+      <application name="@single-spa-todos/users"></application>
+    </route>
+
+    <route default>
+      404 Not Found
+    </route>
+  </main>
+</single-spa-router>
